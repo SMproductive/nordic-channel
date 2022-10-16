@@ -12,8 +12,8 @@
         (method git-fetch)
         (uri (git-reference
           (url "https://github.com/SMproductive/nordic-dwm")
-          (commit "")))
+          (commit "forked dwm")))
         (sha256
-          (base32 ""))))
+          (base32 "17dldrwf50334sn465nvpak9sbs583h88k8xwsahq90bk18lsl8"))))
     (home-page "https://github.com/SMproductive/nordic-dwm")
     (synopsis "Nordic themed dwm")))
