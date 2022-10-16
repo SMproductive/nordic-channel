@@ -29,5 +29,3 @@
    (synopsis "Nordic password manager using fyne2 api")
    (description "pmanager-go is simple and straight forward. Only what you press will happen!")
    (license license:gpl3+)))
-
-pmanager-go
