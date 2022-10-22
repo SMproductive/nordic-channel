@@ -15,7 +15,7 @@
           (url "https://github.com/SMproductive/nordic-dwm")
           (commit "00a70b548bd8872949028f01972ae00990723fd8")))
         (sha256
-          (base32 "00a70b548bd8872949028f01972ae00990723fd8"))))
+          (base32 "12mww15cwwfvz2i2jldr92a1r53qj450f2kkh6yja829qascin8y"))))
     (home-page "https://github.com/SMproductive/nordic-dwm")
     (synopsis "Nordic themed dwm")))
 
