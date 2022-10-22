@@ -13,9 +13,9 @@
         (method git-fetch)
         (uri (git-reference
           (url "https://github.com/SMproductive/nordic-dwm")
-          (commit "e3f20e395a63bbf2c1f93bfc869a613f82632529")))
+          (commit "00a70b548bd8872949028f01972ae00990723fd8")))
         (sha256
-          (base32 "0h0nnbqd178b1qx9bdchw4g2in9x9x627fys9xhhyvxyjff5h7p4"))))
+          (base32 "00a70b548bd8872949028f01972ae00990723fd8"))))
     (home-page "https://github.com/SMproductive/nordic-dwm")
     (synopsis "Nordic themed dwm")))
 
