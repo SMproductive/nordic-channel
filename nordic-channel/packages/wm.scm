@@ -12,7 +12,7 @@
       (origin
         (method git-fetch)
         (uri (git-reference
-          (url "https://github.com/SMproductive/nordic-dwm")
+          (url "https://github.com/SMproductive/nordic-dwl")
           (commit "e379197418a1a061637cf9b4ba46fe8ac826320a")))
         (sha256
           (base32 "0230ml2iavnijrkngvwi56kizqzk9p2mkzvalk9n9x4f6ki7xmjl"))))
