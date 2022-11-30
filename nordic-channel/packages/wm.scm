@@ -6,7 +6,6 @@
 
 (define-public nordic-dwm
   (package
-    (inherit dwl)
     (name "nordic-dwl")
     (source
       (origin
