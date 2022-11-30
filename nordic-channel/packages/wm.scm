@@ -7,6 +7,7 @@
 (define-public nordic-dwm
   (package
     (name "nordic-dwl")
+    (version "0.2.1")
     (source
       (origin
         (method git-fetch)
