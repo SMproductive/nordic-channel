@@ -1,4 +1,4 @@
-(define-module (nordic-channel packages suckless)
+(define-module (nordic-channel packages wm)
   #:use-module (gnu packages wm)
   #:use-module (guix git-download)
   #:use-module (guix packages)
