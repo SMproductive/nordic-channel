@@ -14,11 +14,11 @@
 	    (method git-fetch)
 	    (uri (git-reference
 		  (url "https://github.com/SMproductive/pmanager-go")
-		  (commit "473765e44b105da132bae30b708faad81fce0c24")))
+		  (commit "fa286aeaadc7f6c6832c28f2c161b897e910bee7")))
 	    (file-name (git-file-name name version))
 	    (sha256
 	     (base32
-	      "17cm9s9pm00hgg3vafrq9gc60cvk52cxgs6paqfwdz76ljp1b6k8"))))
+	      "1v3s6vvlvap83zij1f0l3nnqp4iz9i171fv190kidqm68wh76wgk"))))
    (build-system go-build-system)
    (native-inputs
     (list libx11 libxcursor libxrandr libxinerama
@@ -28,4 +28,27 @@
    (home-page "https://github.com/SMproductive/pmanager-go")
    (synopsis "Nordic password manager using fyne2 api")
    (description "pmanager-go is simple and straight forward. Only what you press will happen!")
+   (license license:gpl3+)))
+
+(define-public ppm
+  (package
+   (name "ppm")
+   (version "0.1")
+   (source (origin
+	    (method git-fetch)
+	    (uri (git-reference
+		  (url "https://github.com/SMproductive/ppm")
+		  (commit "519c7a919e4080403ffa731294260b053820ac73")))
+	    (file-name (git-file-name name version))
+	    (sha256
+	     (base32
+	      "0qrkn5dl8zmyp710gis7532471p8cdq2lfmh4wv1bx0rpsd4z84r"))))
+   (build-system go-build-system)
+   (native-inputs
+    (list))
+   (arguments
+    `(#:import-path "github.com/SMproductive/ppm"))
+   (home-page "https://github.com/SMproductive/ppm")
+   (synopsis "Piping Password Manager")
+   (description "ppm is comand line interface for managing passwords. It can open a pipe and what ever client you have can communicate to it.")
    (license license:gpl3+)))
