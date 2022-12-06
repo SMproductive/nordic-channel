@@ -38,11 +38,11 @@
 	    (method git-fetch)
 	    (uri (git-reference
 		  (url "https://github.com/SMproductive/ppm")
-		  (commit "519c7a919e4080403ffa731294260b053820ac73")))
+		  (commit "752d029ec8809ea9395b21e0cdc3dc1a99650260")))
 	    (file-name (git-file-name name version))
 	    (sha256
 	     (base32
-	      "0qrkn5dl8zmyp710gis7532471p8cdq2lfmh4wv1bx0rpsd4z84r"))))
+	      "1qail6jj35kp25yp556xyf7mwg44kw2488ly81iwwyx74ramafm6"))))
    (build-system go-build-system)
    (native-inputs
     (list))
