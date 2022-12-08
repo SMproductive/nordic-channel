@@ -45,9 +45,9 @@
         (method git-fetch)
         (uri (git-reference
           (url "https://github.com/SMproductive/nordic-slstatus")
-          (commit "8b7c93fe3146a98a27dc61cd9abdba8e183c9181")))
+          (commit "628ec11f91894b8f1d0ff47bf140414aaf13888f")))
         (sha256
-          (base32 "0svwq3y081vv2sl60v1304rkpx3phkm9ar157dvgp1jm4lvy0qq6"))))
+          (base32 "1kjlk7920d3pdcbp3drq3n25fs0fwa96pp0d47wl0v7k91lp06mx"))))
     (home-page "https://github.com/SMproductive/nordic-slstatus")
     (synopsis "Simple slstatus for nordic themed dwm")))
 
