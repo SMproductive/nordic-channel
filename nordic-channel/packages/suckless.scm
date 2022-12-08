@@ -24,14 +24,15 @@
   (package
     (inherit st)
     (name "nordic-st")
+    (version "0.9")
     (source
       (origin
         (method git-fetch)
         (uri (git-reference
           (url "https://github.com/SMproductive/nordic-st")
-          (commit "fac1a497ba1c539c7dda8e23623ad28775137b17")))
+          (commit "264bdb661cc3d9e50672028d853d7ac90b88ea6a")))
         (sha256
-          (base32 "0iz6074m1104hbxd701wfr8npnrna3r499y0g7zmripbpi3nijs0"))))
+          (base32 "1lm29550igaik47yg51w6wzm2hhyf324gfm015x817ijzrq6c60x"))))
     (home-page "https://github.com/SMproductive/nordic-st")
     (synopsis "Nordic themed st")))
 
