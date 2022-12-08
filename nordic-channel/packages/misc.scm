@@ -2,10 +2,10 @@
   #:use-module (gnu packages gl)
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages xorg)
+  #:use-module (guix packages)
   #:use-module (guix build-system go)
   #:use-module (guix git-download)
-  #:use-module ((guix licenses) #:prefix license:)
-  #:use-module (guix packages))
+  #:use-module ((guix licenses) #:prefix license:))
 (define-public pmanager-go
   (package
    (name "pmanager-go")

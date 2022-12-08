@@ -1,7 +1,7 @@
 (define-module (nordic-channel packages suckless)
   #:use-module (gnu packages suckless)
-  #:use-module (guix git-download)
   #:use-module (guix packages)
+  #:use-module (guix git-download)
   #:use-module (nordic-channel packages))
 
 (define-public nordic-dwm
@@ -14,9 +14,9 @@
         (method git-fetch)
         (uri (git-reference
           (url "https://github.com/SMproductive/nordic-dwm")
-          (commit "94fb6860f525e85f19ca0e34ae1cd32c8f13f8cb")))
+          (commit "5cd468d1f7c4007fdc9c3299bfe9b07fc1b534e9")))
         (sha256
-          (base32 "1ax51f1q156n6akzbg3k2i208m7yv6m3wb3fswaaiv23hh65kipi"))))
+          (base32 "05rh7wfa8jvf1ly48v59hh8hnr9jr1884n1m3dqr7xmdnzm8apb3"))))
     (home-page "https://github.com/SMproductive/nordic-dwm")
     (synopsis "Nordic themed dwm")))
 

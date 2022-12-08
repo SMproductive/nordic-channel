@@ -1,16 +1,13 @@
 (define-module (nordic-channel packages wm)
   #:use-module (nordic-channel packages)
   #:use-module (gnu packages pkg-config)
-  #:use-module (gnu packages wm)
   #:use-module (gnu packages freedesktop)
+  #:use-module (gnu packages wm)
+  #:use-module (guix packages)
   #:use-module (guix build-system gnu)
-  #:use-module (guix download)
-  #:use-module (guix git-download)
   #:use-module (guix utils)
-  #:use-module (guix build-system gnu)
   #:use-module (guix git-download)
-  #:use-module ((guix licenses) #:prefix license:)
-  #:use-module (guix packages))
+  #:use-module ((guix licenses) #:prefix license:))
 
 ;; (define-public nordic-dwl
 ;;   (package
