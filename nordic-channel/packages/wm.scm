@@ -1,5 +1,7 @@
 (define-module (nordic-channel packages wm)
   #:use-module (gnu packages wm)
+  #:use-module (guix build-system gnu)
+  #:use-module (gnu packages build-tools)
   #:use-module (guix git-download)
   #:use-module ((guix licenses) #:prefix license:)
   #:use-module (guix packages))
