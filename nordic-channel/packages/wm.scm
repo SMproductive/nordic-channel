@@ -1,4 +1,6 @@
 (define-module (nordic-channel packages wm)
+  #:use-module (nordic-channel packages)
+  #:use-module (gnu packages base)
   #:use-module (gnu packages wm)
   #:use-module (guix build-system gnu)
   #:use-module (gnu packages pkg-config)
@@ -49,8 +51,40 @@
         (string-append "CC=" ,(cc-for-target))
         (string-append "PREFIX=" (assoc-ref %outputs "out")))
        #:phases
+
        (modify-phases %standard-phases
-         (delete 'configure))))         ; no configure
+         (replace 'configure
+           (lambda _
+             (substitute* "Makefile" (("\\$\\{CC\\}") "gcc"))
+             #t))
+        (replace 'install
+          (lambda* (#:key outputs #:allow-other-keys)
+            (let ((out (assoc-ref outputs "out")))
+              (invoke "make" "install"
+                      (string-append "DESTDIR=" out) "PREFIX="))))
+        (add-after 'build 'install-xsession
+          (lambda* (#:key outputs #:allow-other-keys)
+            ;; Add a .desktop file to xsessions.
+            (let* ((output (assoc-ref outputs "out"))
+                   (xsessions (string-append output "/share/xsessions")))
+              (mkdir-p xsessions)
+              (with-output-to-file
+                  (string-append xsessions "/dwl.desktop")
+                (lambda _
+                  (format #t
+                    "[Desktop Entry]~@
+                     Name=dwl~@
+                     Comment=Dynamic Window Manager~@
+                     Exec=~a/bin/dwl~@
+                     TryExec=~@*~a/bin/dwl~@
+                     Icon=~@
+                     Type=Application~%"
+                    output)))
+              #t))))))
+
+
+       ;; (modify-phases %standard-phases
+       ;;   (delete 'configure))))         ; no configure
     (native-inputs
      (list wayland-protocols
            pkg-config))
