@@ -24,7 +24,7 @@
 
 
 
-(define-public dwl
+(define-public nordic-dwl
   (package
     (name "nordic-dwl")
     (version "0.3")
