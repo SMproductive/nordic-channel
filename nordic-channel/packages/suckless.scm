@@ -32,7 +32,7 @@
           (url "https://github.com/SMproductive/nordic-st")
           (commit "264bdb661cc3d9e50672028d853d7ac90b88ea6a")))
         (sha256
-          (base32 "1lm29550igaik47yg51w6wzm2hhyf324gfm015x817ijzrq6c60x"))))
+          (base32 "0dpv2hn4h6qxx4cva6wzyrsx9k3igxa3jrav6akb0qczhhy9lcfl"))))
     (home-page "https://github.com/SMproductive/nordic-st")
     (synopsis "Nordic themed st")))
 
