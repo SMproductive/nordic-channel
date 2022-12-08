@@ -8,6 +8,7 @@
   (package
     (inherit dwm)
     (name "nordic-dwm")
+    (version "6.4")
     (source
       (origin
         (method git-fetch)
