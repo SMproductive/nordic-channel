@@ -47,19 +47,39 @@
        (string-append "PREFIX=" (assoc-ref %outputs "out")))
       #:phases
       (modify-phases %standard-phases
-                     (delete 'configure))))         ; no configure
+                     (delete 'configure)         ; no configure
+                     (add-after 'build 'install-xsession
+                                (lambda* (#:key outputs #:allow-other-keys)
+                                  ;; Add a .desktop file to xsessions.
+                                  (let* ((output (assoc-ref outputs "out"))
+                                         (xsessions (string-append output "/share/wayland-sessions")))
+                                    (mkdir-p xsessions)
+                                    (with-output-to-file
+                                        (string-append xsessions "/dwl.desktop")
+                                      (lambda _
+                                        (format #t
+                                                "[Desktop Entry]~@
+                     Name=dwl~@
+                     Comment=Dynamic Window Manager~@
+                     Exec=~a/bin/dwl~@
+                     TryExec=~@*~a/bin/dwl~@
+                     Icon=~@
+                     Type=Application~%"
+                                                output)))
+                                    #t))))))
    (native-inputs
     (list pkg-config))
    (inputs
-    (list wlroots))
+    (list wlroots
+          xorg-server-xwayland))
    (home-page "https://github.com/SMproductive/nordic-dwl")
    (synopsis "Dynamic window manager for Wayland with nordic theme")
    (description
     "@command{dwl} is a compact, hackable compositor for Wayland based on
-wlroots.  It is intended to fill the same space in the Wayland world that dwm
+wlroots.  It is intended to fill the same space in the Wayland world that dwl
 does in X11, primarily in terms of philosophy, and secondarily in terms of
-functionality.  Like dwm, dwl is easy to understand and hack on, due to a
+functionality.  Like dwl, dwl is easy to understand and hack on, due to a
 limited size and a few external dependencies.  It is configurable via
 @file{config.h}.")
-   ;;             LICENSE       LICENSE.dwm   LICENSE.tinywl
+   ;;             LICENSE       LICENSE.dwl   LICENSE.tinywl
    (license (list license:gpl3+ license:expat license:cc0))))
