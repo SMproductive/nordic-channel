@@ -36,14 +36,14 @@
             (let ((out (assoc-ref outputs "out")))
               (invoke "make" "install"
                       (string-append "DESTDIR=" out) "PREFIX="))))
-        (add-after 'build 'install-xsession
+        (add-after 'build 'install-wayland-session
           (lambda* (#:key outputs #:allow-other-keys)
-            ;; Add a .desktop file to xsessions.
+            ;; Add a .desktop file to wayland-sessions.
             (let* ((output (assoc-ref outputs "out"))
-                   (xsessions (string-append output "/share/xsessions")))
-              (mkdir-p xsessions)
+                   (wayland-sessions (string-append output "/share/wayland-sessions")))
+              (mkdir-p wayland-sessions)
               (with-output-to-file
-                  (string-append xsessions "/dwl.desktop")
+                  (string-append wayland-sessions "/dwl.desktop")
                 (lambda _
                   (format #t
                     "[Desktop Entry]~@
