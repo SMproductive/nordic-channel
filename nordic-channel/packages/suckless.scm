@@ -30,9 +30,9 @@
         (method git-fetch)
         (uri (git-reference
           (url "https://github.com/SMproductive/nordic-st")
-          (commit "264bdb661cc3d9e50672028d853d7ac90b88ea6a")))
+          (commit "54a8ac9a5e2aa5a38ae5f14b17ebebc5c035e9b2")))
         (sha256
-          (base32 "0dpv2hn4h6qxx4cva6wzyrsx9k3igxa3jrav6akb0qczhhy9lcfl"))))
+          (base32 "0mr4yyrwjmn0q6zqmmwf6dynn0pb3w667f4sxk0bd3pl4d8y2s48"))))
     (home-page "https://github.com/SMproductive/nordic-st")
     (synopsis "Nordic themed st")))
 
