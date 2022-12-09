@@ -20,7 +20,7 @@
           (url "https://github.com/SMproductive/nordic-dwl")
           (commit "903791987c545da06338e372cc7a5929f344a35b")))
         (sha256
-          (base32 "10q446bbm7vv293j3jla1f5jlb3vbcqg7kn26jqc9nr8rr0lpcw4"))))
+          (base32 "0bggb8mm0ndyr8r1avsbfsw8d4g3436jkpvxq3vwhnddbxylyqrz"))))
     (home-page "https://github.com/SMproductive/nordic-dwl")
     (synopsis "Nordic themed dwl")))
 
