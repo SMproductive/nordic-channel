@@ -21,6 +21,7 @@
           (commit "3756724a882f71767a19abba614dda150d288e26")))
         (sha256
           (base32 "0ac3s134bha8z5ml0m724hhda69j34gma8fqd1zjraj3y5bs0sfz"))))
+    (build-system gnu-build-system)
     (arguments
      `(#:tests? #f                      ; no tests
        #:make-flags
@@ -30,7 +31,11 @@
        #:phases
        (modify-phases %standard-phases
          (delete 'configure)
-
+        (replace 'install
+          (lambda* (#:key outputs #:allow-other-keys)
+            (let ((out (assoc-ref outputs "out")))
+              (invoke "make" "install"
+                      (string-append "DESTDIR=" out) "PREFIX="))))
         (add-after 'build 'install-xsession
           (lambda* (#:key outputs #:allow-other-keys)
             ;; Add a .desktop file to xsessions.
@@ -49,7 +54,7 @@
                      Icon=~@
                      Type=Application~%"
                     output)))
-              #t))))))         ; no configure
+              #t))))))
     (home-page "https://github.com/SMproductive/nordic-dwl")
     (synopsis "Nordic themed dwl")))
 
