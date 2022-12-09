@@ -3,6 +3,7 @@
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages freedesktop)
   #:use-module (gnu packages wm)
+  #:use-module (gnu packages xorg)
   #:use-module (guix packages)
   #:use-module (guix build-system gnu)
   #:use-module (guix utils)
