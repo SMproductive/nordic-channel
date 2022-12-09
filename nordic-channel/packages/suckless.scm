@@ -51,18 +51,17 @@
     (home-page "https://github.com/SMproductive/nordic-slstatus")
     (synopsis "Simple slstatus for nordic themed dwm")))
 
-(define-public nordic-surf
+(define-public nordic-scroll
   (package
-    (inherit surf)
-    (name "nordic-surf")
+    (inherit slscroll)
+    (name "nordic-scroll")
     (source
       (origin
         (method git-fetch)
         (uri (git-reference
-          (url "https://github.com/SMproductive/nordic-surf")
-          (commit "affb7d83ae6844f0366cdf7c48f46f4dcb6c6a31")))
+          (url "https://github.com/SMproductive/nordic-scroll")
+          (commit "acef54067b0a532d7090cb91fad5ca11fd76c556")))
         (sha256
-          (base32 "02gn99nqr165n6b7fdd3r4xkxspgbb8s80l8vpqml53ks296kax1"))))
-    (home-page "https://github.com/SMproductive/nordic-surf")
-    (synopsis "Nordic themed surf")))
-
+          (base32 "0n5f8f8nknxw2mh28dh02z753p6p68iaqqkhyf1s0mmk4nlw1pgx"))))
+    (home-page "https://github.com/SMproductive/nordic-scroll")
+    (synopsis "Usable scroll")))
