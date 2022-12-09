@@ -60,8 +60,8 @@
         (method git-fetch)
         (uri (git-reference
           (url "https://github.com/SMproductive/nordic-scroll")
-          (commit "acef54067b0a532d7090cb91fad5ca11fd76c556")))
+          (commit "d61683df19ee4e23cb225349b9bad77dcc81f6e4")))
         (sha256
-          (base32 "0n5f8f8nknxw2mh28dh02z753p6p68iaqqkhyf1s0mmk4nlw1pgx"))))
+          (base32 "15yh0pfllnpalf4v3crlqns33jh3fqa938pci7bwvdqhhnnilj9x"))))
     (home-page "https://github.com/SMproductive/nordic-scroll")
     (synopsis "Usable scroll")))
