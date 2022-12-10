@@ -1,30 +1,12 @@
 (define-module (nordic-channel packages wm)
   #:use-module (nordic-channel packages)
   #:use-module (gnu packages pkg-config)
-  #:use-module (gnu packages freedesktop)
   #:use-module (gnu packages wm)
   #:use-module (guix packages)
   #:use-module (guix build-system gnu)
   #:use-module (guix utils)
   #:use-module (guix git-download)
   #:use-module ((guix licenses) #:prefix license:))
-
-;; TODO desktop file
-;; (define-public nordic-dwl
-;;   (package
-;;     (inherit dwl)
-;;     (name "nordic-dwl")
-;;     (source
-;;       (origin
-;;         (method git-fetch)
-;;         (uri (git-reference
-;;           (url "https://github.com/SMproductive/nordic-dwl.git")
-;;           (commit "3756724a882f71767a19abba614dda150d288e26")))
-;;         (sha256
-;;           (base32 "0ac3s134bha8z5ml0m724hhda69j34gma8fqd1zjraj3y5bs0sfz"))))
-;;     (home-page "https://github.com/SMproductive/nordic-dwl")
-;;     (synopsis "Nordic themed dwl")))
-
 
 (define-public nordic-dwl
   (package
@@ -82,3 +64,40 @@ limited size and a few external dependencies.  It is configurable via
 @file{config.h}.")
    ;;             LICENSE       LICENSE.dwl   LICENSE.tinywl
    (license (list license:gpl3+ license:expat license:cc0))))
+
+
+
+
+
+
+(define-public dwl-bar
+  (package
+   (name "dwl-bar")
+   (version "0")
+   (source (origin
+            (method git-fetch)
+            (uri (git-reference
+                  (url "https://github.com/SMproductive/dwl-bar.git")
+                  (commit "09b51726d0423a246e39480eceb0d55d307ad801")))
+            (file-name (git-file-name name version))
+            (sha256
+             (base32 "051x19nzsrv59pghxmx6xa1yms6s4fs7xcfvkq0fr5vjqdnpk15k"))))
+   (build-system glib-or-gtk-build-system)
+   (arguments
+    `(#:tests? #f                      ; no tests
+      #:make-flags
+      (list
+       (string-append "CC=" ,(cc-for-target))
+       (string-append "PREFIX=" (assoc-ref %outputs "out")))
+      #:phases
+      (modify-phases %standard-phases
+                     (delete 'configure))))
+   (native-inputs
+    (list pkg-config))
+   (inputs
+    (list gtk))
+   (home-page "https://github.com/SMproductive/nordic-dwl")
+   (synopsis "Bar for dwl")
+   (description "Is like the usual dwm bar made with gtk.")
+   ;;             LICENSE       LICENSE.dwl   LICENSE.tinywl
+   (license license:gpl3+)))
