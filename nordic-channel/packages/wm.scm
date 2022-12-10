@@ -34,10 +34,10 @@
             (method git-fetch)
             (uri (git-reference
                   (url "https://github.com/SMproductive/nordic-dwl.git")
-                  (commit "03d860690041ae572e12649819e01948c6acc0f8")))
+                  (commit "68493dc1564d434934084a9b49296a385c56a784")))
             (file-name (git-file-name name version))
             (sha256
-             (base32 "1sdz0bghn54g0vmqsjv526ba99lwcx0zvkynhf1sx2q87z5nfi3b"))))
+             (base32 "08cvh19mqsx3v6zz8645vmznas5csllbc40v8m67dz6r051ch00n"))))
    (build-system gnu-build-system)
    (arguments
     `(#:tests? #f                      ; no tests
