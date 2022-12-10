@@ -1,9 +1,13 @@
 (define-module (nordic-channel packages wm)
   #:use-module (nordic-channel packages)
   #:use-module (gnu packages pkg-config)
+  #:use-module (gnu packages linux)
   #:use-module (gnu packages wm)
+  #:use-module (gnu packages gtk)
+  #:use-module (gnu packages base)
   #:use-module (guix packages)
   #:use-module (guix build-system gnu)
+  #:use-module (guix build-system glib-or-gtk)
   #:use-module (guix utils)
   #:use-module (guix git-download)
   #:use-module ((guix licenses) #:prefix license:))
@@ -93,9 +97,12 @@ limited size and a few external dependencies.  It is configurable via
       (modify-phases %standard-phases
                      (delete 'configure))))
    (native-inputs
-    (list pkg-config))
+    (list pkg-config
+          linux-libre-headers
+          binutils))
    (inputs
-    (list gtk))
+    (list glibc
+          gtk))
    (home-page "https://github.com/SMproductive/nordic-dwl")
    (synopsis "Bar for dwl")
    (description "Is like the usual dwm bar made with gtk.")
