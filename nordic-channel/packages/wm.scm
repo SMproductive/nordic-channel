@@ -104,8 +104,7 @@ limited size and a few external dependencies.  It is configurable via
     (list gtk
           harfbuzz
           cairo
-          pango
-          glib))
+          pango))
    (home-page "https://github.com/SMproductive/nordic-dwl")
    (synopsis "Bar for dwl")
    (description "Is like the usual dwm bar made with gtk.")
