@@ -83,10 +83,10 @@ limited size and a few external dependencies.  It is configurable via
             (method git-fetch)
             (uri (git-reference
                   (url "https://github.com/SMproductive/dwl-bar.git")
-                  (commit "09b51726d0423a246e39480eceb0d55d307ad801")))
+                  (commit "55663ebf800bc56a02b6aaf5e1f08663bf2430be")))
             (file-name (git-file-name name version))
             (sha256
-             (base32 "051x19nzsrv59pghxmx6xa1yms6s4fs7xcfvkq0fr5vjqdnpk15k"))))
+             (base32 "1m6adyw55wqf3xngprl0lzc07y7r9pasqsrfmq0bz3c3ab1v26ah"))))
    (build-system glib-or-gtk-build-system)
    (arguments
     `(#:tests? #f                      ; no tests
