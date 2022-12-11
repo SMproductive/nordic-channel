@@ -100,7 +100,10 @@ limited size and a few external dependencies.  It is configurable via
    (native-inputs
     (list pkg-config))
    (propagated-inputs
-    (list gtk))
+    (list gtk
+          pango
+          cairo
+          harfbuzz))
    (home-page "https://github.com/SMproductive/nordic-dwl")
    (synopsis "Bar for dwl")
    (description "Is like the usual dwm bar made with gtk.")
