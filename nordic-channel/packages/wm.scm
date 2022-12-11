@@ -98,15 +98,13 @@ limited size and a few external dependencies.  It is configurable via
       (modify-phases %standard-phases
                      (delete 'configure))))
    (native-inputs
-    (list pkg-config
-          gobject-introspection))
-   (inputs
-    (list glib
-          gtk))
+    (list pkg-config))
    (propagated-inputs
-    (list pango-1.90
+    (list gtk
+          glib
+          harfbuzz
           cairo
-          harfbuzz))
+          pango-1.90))
    (home-page "https://github.com/SMproductive/nordic-dwl")
    (synopsis "Bar for dwl")
    (description "Is like the usual dwm bar made with gtk.")
