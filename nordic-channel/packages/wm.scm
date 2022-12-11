@@ -99,8 +99,10 @@ limited size and a few external dependencies.  It is configurable via
                      (delete 'configure))))
    (native-inputs
     (list pkg-config
-          gtk
-          glib))
+          gobject-introspection))
+   (inputs
+    (list glib
+          gtk))
    (propagated-inputs
     (list pango-1.90
           cairo
