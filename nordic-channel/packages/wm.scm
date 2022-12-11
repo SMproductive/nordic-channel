@@ -101,8 +101,9 @@ limited size and a few external dependencies.  It is configurable via
     (list pkg-config
           `(,glib "bin")
           gobject-introspection))
-   (inputs
+   (propagated-inputs
     (list gtk
+          glib
           harfbuzz
           cairo
           pango-1.90))
