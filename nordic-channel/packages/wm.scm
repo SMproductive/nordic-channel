@@ -4,6 +4,7 @@
   #:use-module (gnu packages linux)
   #:use-module (gnu packages glib)
   #:use-module (gnu packages wm)
+  #:use-module (gnu packages xorg)
   #:use-module (gnu packages gtk)
   #:use-module (gnu packages base)
   #:use-module (guix packages)
@@ -21,10 +22,10 @@
             (method git-fetch)
             (uri (git-reference
                   (url "https://github.com/SMproductive/nordic-dwl.git")
-                  (commit "68493dc1564d434934084a9b49296a385c56a784")))
+                  (commit "62510eaf58887042dcfef571422c853ce867a2e1")))
             (file-name (git-file-name name version))
             (sha256
-             (base32 "08cvh19mqsx3v6zz8645vmznas5csllbc40v8m67dz6r051ch00n"))))
+             (base32 "0h6cnhd6z8y3djyzjk0x4p5y00rkv8v03nqvj9l3f17pr85nak7x"))))
    (build-system gnu-build-system)
    (arguments
     `(#:tests? #f                      ; no tests
@@ -58,6 +59,8 @@
     (list pkg-config))
    (inputs
     (list wlroots))
+   (propagated-inputs
+    (list xorg-server-xwayland))
    (home-page "https://github.com/SMproductive/nordic-dwl")
    (synopsis "Dynamic window manager for Wayland with nordic theme")
    (description
