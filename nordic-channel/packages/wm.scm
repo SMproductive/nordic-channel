@@ -98,11 +98,11 @@ limited size and a few external dependencies.  It is configurable via
       (modify-phases %standard-phases
                      (delete 'configure))))
    (native-inputs
-    (list pkg-config))
+    (list pkg-config
+          gtk
+          glib))
    (propagated-inputs
-    (list gtk
-          glib
-          pango-1.90
+    (list pango-1.90
           cairo
           harfbuzz))
    (home-page "https://github.com/SMproductive/nordic-dwl")
