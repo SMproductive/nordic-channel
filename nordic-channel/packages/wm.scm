@@ -2,6 +2,7 @@
   #:use-module (nordic-channel packages)
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages linux)
+  #:use-module (gnu packages glib)
   #:use-module (gnu packages wm)
   #:use-module (gnu packages gtk)
   #:use-module (gnu packages base)
@@ -105,9 +106,8 @@ limited size and a few external dependencies.  It is configurable via
           glib
           harfbuzz
           cairo
-          pango@1.90))
+          pango>@1.50))
    (home-page "https://github.com/SMproductive/nordic-dwl")
    (synopsis "Bar for dwl")
    (description "Is like the usual dwm bar made with gtk.")
-   ;;             LICENSE       LICENSE.dwl   LICENSE.tinywl
    (license license:gpl3+)))
