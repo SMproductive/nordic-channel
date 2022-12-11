@@ -98,10 +98,11 @@ limited size and a few external dependencies.  It is configurable via
       (modify-phases %standard-phases
                      (delete 'configure))))
    (native-inputs
-    (list pkg-config))
-   (propagated-inputs
+    (list pkg-config
+          `(,glib "bin")
+          gobject-introspection))
+   (inputs
     (list gtk
-          glib
           harfbuzz
           cairo
           pango-1.90))
