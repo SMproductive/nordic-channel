@@ -101,6 +101,7 @@ limited size and a few external dependencies.  It is configurable via
     (list pkg-config))
    (propagated-inputs
     (list gtk
+          glib
           pango-1.90
           cairo
           harfbuzz))
