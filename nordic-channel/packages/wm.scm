@@ -24,10 +24,10 @@
             (method git-fetch)
             (uri (git-reference
                   (url "https://github.com/djpohly/dwl")
-                  (commit "62510eaf58887042dcfef571422c853ce867a2e1")))
+                  (commit "17ac59f99f91f7c8aec690fa551f929e6929199c")))
             (file-name (git-file-name name version))
             (sha256
-             (base32 "0h6cnhd6z8y3djyzjk0x4p5y00rkv8v03nqvj9l3f17pr85nak7x"))))
+             (base32 "1b7npigs8vhrbyr19wpa7jzl8m8dc45bn2j3mhm8c21n6gkvlf7a"))))
    (build-system gnu-build-system)
    (arguments
     `(#:tests? #f                      ; no tests
@@ -62,7 +62,8 @@
    (inputs
     (list wlroots))
    (propagated-inputs
-    (list xorg-server-xwayland))
+    (list xorg-server-xwayland
+          wayland))
    (home-page "https://github.com/SMproductive/nordic-dwl")
    (synopsis "Dynamic window manager for Wayland with nordic theme")
    (description
