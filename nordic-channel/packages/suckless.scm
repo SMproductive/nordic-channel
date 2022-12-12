@@ -1,8 +1,8 @@
 (define-module (nordic-channel packages suckless)
+  #:use-module (nordic-channel packages)
   #:use-module (gnu packages suckless)
   #:use-module (guix packages)
-  #:use-module (guix git-download)
-  #:use-module (nordic-channel packages))
+  #:use-module (guix git-download))
 
 (define-public nordic-dwm
   (package

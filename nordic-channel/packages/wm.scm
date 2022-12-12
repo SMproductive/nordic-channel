@@ -1,17 +1,18 @@
 (define-module (nordic-channel packages wm)
   #:use-module (nordic-channel packages)
-  #:use-module (gnu packages pkg-config)
-  #:use-module (gnu packages linux)
+  #:use-module (gnu packages base)
   #:use-module (gnu packages glib)
+  #:use-module (gnu packages gtk)
+  #:use-module (gnu packages linux)
+  #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages wm)
   #:use-module (gnu packages xorg)
-  #:use-module (gnu packages gtk)
-  #:use-module (gnu packages base)
-  #:use-module (guix packages)
-  #:use-module (guix build-system gnu)
   #:use-module (guix build-system glib-or-gtk)
-  #:use-module (guix utils)
+  #:use-module (guix build-system gnu)
+  #:use-module (guix download)
   #:use-module (guix git-download)
+  #:use-module (guix packages)
+  #:use-module (guix utils)
   #:use-module ((guix licenses) #:prefix license:))
 
 (define-public nordic-dwl
@@ -58,7 +59,7 @@
    (native-inputs
     (list pkg-config))
    (inputs
-    (list wlroots))
+    (list wlroots-16))
    (propagated-inputs
     (list xorg-server-xwayland))
    (home-page "https://github.com/SMproductive/nordic-dwl")
