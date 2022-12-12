@@ -23,7 +23,7 @@
    (source (origin
             (method git-fetch)
             (uri (git-reference
-                  (url "https://github.com/djpohly/dwl")
+                  (url "https://github.com/SMproductive/nordic-dwl")
                   (commit "17ac59f99f91f7c8aec690fa551f929e6929199c")))
             (file-name (git-file-name name version))
             (sha256
