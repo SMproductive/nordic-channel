@@ -16,6 +16,7 @@
   #:use-module (nordic-channel packages)
   #:use-module ((guix licenses) #:prefix license:))
 
+;; FIXME can not compile
 (define-public nordic-dwl
   (package
    (name "nordic-dwl")
