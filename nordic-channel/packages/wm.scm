@@ -113,6 +113,20 @@ limited size and a few external dependencies.  It is configurable via
    (license license:gpl3+)))
 
 
+(define-public wayland-1.21
+  (package
+	(inherit wayland)
+   (version "1.21.0")
+   (source (origin
+            (method git-fetch)
+            (uri (git-reference
+             (url "https://gitlab.freedesktop.org/wayland/wayland.git")
+                  (commit "8135e856ebd79872f886466e9cee39affb7d9ee8")))
+            (file-name (git-file-name name version))
+            (sha256
+             (base32 "0fwad6w5jm32c04wh4gca7d1ixdj4b9dnsiy1h6qd9nxs0w47wwy"))))))
+
+
 ;; (define-public wlroots-16
 ;;   (package
 ;; 	(inherit wlroots)
