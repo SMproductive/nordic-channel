@@ -117,7 +117,7 @@ limited size and a few external dependencies.  It is configurable via
 (define-public wayland-1.21
   (package
    (inherit wayland)
-   (name wayland-1.21)
+   (name "wayland")
    (version "1.21.0")
    (source (origin
             (method git-fetch)
@@ -131,10 +131,11 @@ limited size and a few external dependencies.  It is configurable via
 
 (define-public wlroots-0.16
   (package
-	(inherit wlroots)
+   (inherit wlroots)
+   (name "wlroots")
    (version "0.16.0")
    (source (origin
-       (method url-fetch)
-       (uri (string-append "https://gitlab.freedesktop.org/wlroots/wlroots/-/releases/" version "/downloads/wlroots-" version ".tar.gz"))
-       (sha256
-        (base32 "1kw4qdr9af4g38klhzchgm58s2ih154q9041bgfdbicnpcqany44"))))))
+            (method url-fetch)
+            (uri (string-append "https://gitlab.freedesktop.org/wlroots/wlroots/-/releases/" version "/downloads/wlroots-" version ".tar.gz"))
+            (sha256
+             (base32 "1kw4qdr9af4g38klhzchgm58s2ih154q9041bgfdbicnpcqany44"))))))
