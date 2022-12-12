@@ -59,7 +59,7 @@
    (native-inputs
     (list pkg-config))
    (inputs
-    (list wlroots-16))
+    (list wlroots))
    (propagated-inputs
     (list xorg-server-xwayland))
    (home-page "https://github.com/SMproductive/nordic-dwl")
