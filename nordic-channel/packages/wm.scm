@@ -27,7 +27,7 @@
                   (commit "17ac59f99f91f7c8aec690fa551f929e6929199c")))
             (file-name (git-file-name name version))
             (sha256
-             (base32 "1b7npigs8vhrbyr19wpa7jzl8m8dc45bn2j3mhm8c21n6gkvlf7a"))))
+             (base32 "1jqqydfca81cga59n107jm2v1680zpxsr5b051mnrw9rbh9fpk6j"))))
    (build-system gnu-build-system)
    (arguments
     `(#:tests? #f                      ; no tests
