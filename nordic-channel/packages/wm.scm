@@ -20,7 +20,7 @@
 (define-public nordic-dwl
   (package
    (name "nordic-dwl")
-   (version "0.2.1")
+   (version "0.3.1")
    (source (origin
             (method git-fetch)
             (uri (git-reference
