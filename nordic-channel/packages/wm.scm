@@ -23,10 +23,10 @@
             (method git-fetch)
             (uri (git-reference
                   (url "https://github.com/djpohly/dwl")
-                  (commit "c60f65195186e6c72ec66ba7f10139a420a595a0")))
+                  (commit "62510eaf58887042dcfef571422c853ce867a2e1")))
             (file-name (git-file-name name version))
             (sha256
-             (base32 "1c5dsc93sraywds5af10ywkvrz0hfddi1a5s2sicvfvv2jw8wkcq"))))
+             (base32 "0h6cnhd6z8y3djyzjk0x4p5y00rkv8v03nqvj9l3f17pr85nak7x"))))
    (build-system gnu-build-system)
    (arguments
     `(#:tests? #f                      ; no tests
@@ -113,12 +113,12 @@ limited size and a few external dependencies.  It is configurable via
    (license license:gpl3+)))
 
 
-(define-public wlroots-16
-  (package
-	(inherit wlroots)
-   (version "0.16.0")
-   (source (origin
-       (method url-fetch)
-       (uri (string-append "https://gitlab.freedesktop.org/wlroots/wlroots/-/releases/" version "/downloads/wlroots-" version ".tar.gz"))
-       (sha256
-        (base32 "1kw4qdr9af4g38klhzchgm58s2ih154q9041bgfdbicnpcqany44"))))))
+;; (define-public wlroots-16
+;;   (package
+;; 	(inherit wlroots)
+;;    (version "0.16.0")
+;;    (source (origin
+;;        (method url-fetch)
+;;        (uri (string-append "https://gitlab.freedesktop.org/wlroots/wlroots/-/releases/" version "/downloads/wlroots-" version ".tar.gz"))
+;;        (sha256
+;;         (base32 "1kw4qdr9af4g38klhzchgm58s2ih154q9041bgfdbicnpcqany44"))))))
