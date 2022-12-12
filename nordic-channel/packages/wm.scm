@@ -59,7 +59,7 @@
    (native-inputs
     (list pkg-config))
    (inputs
-    (list wlroots-16))
+    (list wlroots))
    (propagated-inputs
     (list xorg-server-xwayland))
    (home-page "https://github.com/SMproductive/nordic-dwl")
@@ -113,12 +113,12 @@ limited size and a few external dependencies.  It is configurable via
    (license license:gpl3+)))
 
 
-(define-public wlroots-16
-  (package
-	(inherit wlroots)
-   (version "0.16.0")
-   (source (origin
-       (method url-fetch)
-       (uri (string-append "https://gitlab.freedesktop.org/wlroots/wlroots/-/releases/" version "/downloads/wlroots-" version ".tar.gz"))
-       (sha256
-        (base32 "1kw4qdr9af4g38klhzchgm58s2ih154q9041bgfdbicnpcqany44"))))))
+;; (define-public wlroots-16
+;;   (package
+;; 	(inherit wlroots)
+;;    (version "0.16.0")
+;;    (source (origin
+;;        (method url-fetch)
+;;        (uri (string-append "https://gitlab.freedesktop.org/wlroots/wlroots/-/releases/" version "/downloads/wlroots-" version ".tar.gz"))
+;;        (sha256
+;;         (base32 "1kw4qdr9af4g38klhzchgm58s2ih154q9041bgfdbicnpcqany44"))))))
