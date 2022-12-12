@@ -73,11 +73,7 @@ limited size and a few external dependencies.  It is configurable via
    ;;             LICENSE       LICENSE.dwl   LICENSE.tinywl
    (license (list license:gpl3+ license:expat license:cc0))))
 
-
-
-
-
-
+;; FIXME can not find libraries in runpath
 (define-public dwl-bar
   (package
    (name "dwl-bar")
@@ -114,3 +110,14 @@ limited size and a few external dependencies.  It is configurable via
    (synopsis "Bar for dwl")
    (description "Is like the usual dwm bar made with gtk.")
    (license license:gpl3+)))
+
+
+(define-public wlroots-16
+  (package
+	(inherit wlroots)
+   (version "0.16.0")
+   (source (origin
+       (method url-fetch)
+       (uri (string-append "https://gitlab.freedesktop.org/wlroots/wlroots/-/releases/" version "/downloads/wlroots-" version ".tar.gz"))
+       (sha256
+        (base32 "1kw4qdr9af4g38klhzchgm58s2ih154q9041bgfdbicnpcqany44"))))))
