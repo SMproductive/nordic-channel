@@ -198,9 +198,13 @@ limited size and a few external dependencies.  It is configurable via
             (uri (string-append "https://gitlab.freedesktop.org/wlroots/wlroots/-/releases/" version "/downloads/wlroots-" version ".tar.gz"))
             (sha256
              (base32 "1kw4qdr9af4g38klhzchgm58s2ih154q9041bgfdbicnpcqany44"))))
-   (inputs (list
-            hwdata
-            vulkan-headers))
+   ;; (inputs (list
+   ;;          hwdata
+   ;;          vulkan-headers))
+    (native-inputs
+     (list pkg-config
+           hwdata
+           vulkan-headers))
    (propagated-inputs (list
                        eudev
                        libdrm-2.4.114
