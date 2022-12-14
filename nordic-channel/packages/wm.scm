@@ -16,6 +16,7 @@
   #:use-module (gnu packages xorg)
   #:use-module (guix build-system glib-or-gtk)
   #:use-module (guix build-system gnu)
+  #:use-module (guix build-system meson)
   #:use-module (guix download)
   #:use-module (guix git-download)
   #:use-module (guix packages)
@@ -137,7 +138,7 @@ limited size and a few external dependencies.  It is configurable via
             (sha256
              (base32 "0fwad6w5jm32c04wh4gca7d1ixdj4b9dnsiy1h6qd9nxs0w47wwy"))))))
 
-(define-public libdrm-2.4.114
+(define-public nordic-libdrm
   (package
    (inherit libdrm)
    (name "nordic-libdrm")
@@ -157,7 +158,7 @@ limited size and a few external dependencies.  It is configurable via
    (name "nordic-mesa")
     (propagated-inputs
       (list ;; The following are in the Requires.private field of gl.pc.
-            libdrm-2.4.114
+            nordic-libdrm
             libvdpau
             libx11
             libxdamage
@@ -198,25 +199,68 @@ limited size and a few external dependencies.  It is configurable via
             (uri (string-append "https://gitlab.freedesktop.org/wlroots/wlroots/-/releases/" version "/downloads/wlroots-" version ".tar.gz"))
             (sha256
              (base32 "1kw4qdr9af4g38klhzchgm58s2ih154q9041bgfdbicnpcqany44"))))
+   (build-system meson-build-system)
+   (arguments
+    `(#:phases
+      (modify-phases %standard-phases
+                     (add-before 'configure 'hardcode-paths
+                                 (lambda* (#:key inputs #:allow-other-keys)
+                                   (substitute* "xwayland/server.c"
+                                                (("Xwayland") (string-append (assoc-ref inputs
+                                                                                        "xorg-server-xwayland")
+                                                                             "/bin/Xwayland")))
+                                   #t)))))
+   (propagated-inputs
+    (list ;; As required by wlroots.pc.
+     nordic-libdrm
+     eudev
+     libinput-minimal
+     libxkbcommon
+     vulkan-headers
+     vulkan-tools
+     vulkan-loader
+     mesa
+     pixman
+     libseat
+     wayland
+     wayland-protocols
+     xcb-util-errors
+     xcb-util-wm
+     xorg-server-xwayland))
+   (inputs (list
+            hwdata))
+   (native-inputs
+    (list pkg-config))
+   (home-page "https://github.com/swaywm/wlroots")
+   (synopsis "Pluggable, composable, unopinionated modules for building a
+Wayland compositor")
+   (description "wlroots is a set of pluggable, composable, unopinionated
+modules for building a Wayland compositor.")
+   (license license:expat)))  ; MIT license
+
+
+
+
+
    ;; (inputs (list
    ;;          hwdata
    ;;          vulkan-headers))
-    (native-inputs
-     (list hwdata
-           pkg-config))
-   (propagated-inputs (list
-                       eudev
-                       libdrm-2.4.114
-                       libinput-minimal
-                       vulkan-headers
-                       vulkan-loader
-                       vulkan-tools
-                       libseat
-                       libxkbcommon
-                       nordic-mesa
-                       nordic-wayland
-                       nordic-wayland-protocols
-                       pixman
-                       xcb-util-errors
-                       xcb-util-wm
-                       xorg-server-xwayland))))
+   ;;  (native-inputs
+   ;;   (list hwdata
+   ;;         pkg-config))
+   ;; (propagated-inputs (list
+   ;;                     eudev
+   ;;                     nordic-libdrm
+   ;;                     libinput-minimal
+   ;;                     vulkan-headers
+   ;;                     vulkan-loader
+   ;;                     vulkan-tools
+   ;;                     libseat
+   ;;                     libxkbcommon
+   ;;                     nordic-mesa
+   ;;                     nordic-wayland
+   ;;                     nordic-wayland-protocols
+   ;;                     pixman
+   ;;                     xcb-util-errors
+   ;;                     xcb-util-wm
+   ;;                     xorg-server-xwayland))))
