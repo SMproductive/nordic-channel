@@ -156,4 +156,17 @@ limited size and a few external dependencies.  It is configurable via
             (method url-fetch)
             (uri (string-append "https://gitlab.freedesktop.org/wlroots/wlroots/-/releases/" version "/downloads/wlroots-" version ".tar.gz"))
             (sha256
-             (base32 "1kw4qdr9af4g38klhzchgm58s2ih154q9041bgfdbicnpcqany44"))))))
+             (base32 "1kw4qdr9af4g38klhzchgm58s2ih154q9041bgfdbicnpcqany44"))))
+   (propagated-inputs (list
+                       eudev
+                       libinput-minimal
+                       libxkbcommon
+                       mesa
+                       libdrm
+                       pixman
+                       libseat
+                       wayland-1.21
+                       wayland-protocols
+                       xcb-util-errors
+                       xcb-util-wm
+                       xorg-server-xwayland))))
