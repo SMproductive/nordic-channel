@@ -126,7 +126,7 @@ limited size and a few external dependencies.  It is configurable via
 (define-public nordic-wayland
   (package
    (inherit wayland)
-   (name "wayland")
+   (name "nordic-wayland")
    (version "1.21.0")
    (source (origin
             (method git-fetch)
@@ -140,6 +140,7 @@ limited size and a few external dependencies.  It is configurable via
 (define-public libdrm-2.4.114
   (package
    (inherit libdrm)
+   (name "nordic-libdrm")
    (version "2.4.114")
     (source (origin
               (method url-fetch)
@@ -153,6 +154,7 @@ limited size and a few external dependencies.  It is configurable via
 (define-public nordic-mesa
   (package
    (inherit mesa)
+   (name "nordic-mesa")
     (propagated-inputs
       (list ;; The following are in the Requires.private field of gl.pc.
             libdrm-2.4.114
@@ -167,6 +169,7 @@ limited size and a few external dependencies.  It is configurable via
 (define-public nordic-wayland-protocols
   (package
     (inherit wayland-protocols)
+    (name "nordic-wayland-protocols")
     (version "1.31")
     (source (origin
               (method url-fetch)
@@ -188,6 +191,7 @@ limited size and a few external dependencies.  It is configurable via
 (define-public nordic-wlroots
   (package
    (inherit wlroots)
+   (name "nordic-wlroots")
    (version "0.16.0")
    (source (origin
             (method url-fetch)
