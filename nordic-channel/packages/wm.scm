@@ -145,7 +145,7 @@ limited size and a few external dependencies.  It is configurable via
                     version ".tar.xz"))
               (sha256
                (base32
-                "150kdmgsqqqklz6h1593j867zq6jfirlv79ynaj5qgqlrbpcy9k3"))))))
+                "09nhk3jx3qzggl5vyii3yh4zm0npjqsbxhzvxrg2xla77a2cyj9h"))))))
 
 (define-public wlroots-0.16
   (package
@@ -162,7 +162,7 @@ limited size and a few external dependencies.  It is configurable via
                        libinput-minimal
                        libxkbcommon
                        mesa
-                       libdrm
+                       libdrm-2.4
                        pixman
                        libseat
                        wayland-1.21
