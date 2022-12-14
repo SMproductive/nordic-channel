@@ -190,7 +190,7 @@ limited size and a few external dependencies.  It is configurable via
                        eudev
                        libinput-minimal
                        libxkbcommon
-                       mesa
+                       mesa-22.3.0
                        libdrm-2.4.114
                        pixman
                        libseat
