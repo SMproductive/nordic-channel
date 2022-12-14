@@ -194,6 +194,7 @@ limited size and a few external dependencies.  It is configurable via
              (base32 "1kw4qdr9af4g38klhzchgm58s2ih154q9041bgfdbicnpcqany44"))))
    (propagated-inputs (list
                        eudev
+                       vulcan
                        libinput-minimal
                        libxkbcommon
                        nordic-mesa
