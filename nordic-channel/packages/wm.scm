@@ -9,6 +9,7 @@
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages python)
   #:use-module (gnu packages video)
+  #:use-module (gnu packages vulkan)
   #:use-module (gnu packages wm)
   #:use-module (gnu packages xdisorg)
   #:use-module (gnu packages xorg)
@@ -194,7 +195,7 @@ limited size and a few external dependencies.  It is configurable via
              (base32 "1kw4qdr9af4g38klhzchgm58s2ih154q9041bgfdbicnpcqany44"))))
    (propagated-inputs (list
                        eudev
-                       vulcan
+                       vulkan-headers
                        libinput-minimal
                        libxkbcommon
                        nordic-mesa
