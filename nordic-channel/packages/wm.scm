@@ -190,21 +190,19 @@ limited size and a few external dependencies.  It is configurable via
 
 
 
-(define-public nordic-vulkan-loader
-  (package
-   (inherit vulkan-loader)
-   (name "nordic-vulkan-loader")
-   (version "1.3.237")
-   (source (origin
-       (method git-fetch)
-       (uri (git-reference
-             (url "https://github.com/KhronosGroup/Vulkan-Loader")
-             (commit "b43758588be22f5a417320a085fa712a89159943")))
-       (file-name (git-file-name name version))
-       (sha256
-        (base32 "15d12fwy90km0nkpjjr77piahiahnybvg6yfdbbzfn5v54hhqgq9"))))
-   (arguments
-    `(#:tests? #f))))
+;; (define-public nordic-vulkan-loader
+;;   (package
+;;    (inherit vulkan-loader)
+;;    (name "nordic-vulkan-loader")
+;;    (version "1.3.237")
+;;    (source (origin
+;;        (method git-fetch)
+;;        (uri (git-reference
+;;              (url "https://github.com/KhronosGroup/Vulkan-Loader")
+;;              (commit "b43758588be22f5a417320a085fa712a89159943")))
+;;        (file-name (git-file-name name version))
+;;        (sha256
+;;         (base32 "15d12fwy90km0nkpjjr77piahiahnybvg6yfdbbzfn5v54hhqgq9"))))))
 
 
 (define-public nordic-wlroots
