@@ -228,7 +228,7 @@ limited size and a few external dependencies.  It is configurable via
    ;; (inputs (list
    ;;          hwdata))
    (native-inputs
-    (list hwdata
+    (list hwdata ; FIXME can not find build time dependency
           pkg-config))
    (home-page "https://github.com/swaywm/wlroots")
    (synopsis "Pluggable, composable, unopinionated modules for building a
