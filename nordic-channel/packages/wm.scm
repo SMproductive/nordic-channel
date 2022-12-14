@@ -194,9 +194,11 @@ limited size and a few external dependencies.  It is configurable via
             (uri (string-append "https://gitlab.freedesktop.org/wlroots/wlroots/-/releases/" version "/downloads/wlroots-" version ".tar.gz"))
             (sha256
              (base32 "1kw4qdr9af4g38klhzchgm58s2ih154q9041bgfdbicnpcqany44"))))
+   (inputs (list
+            hwdata
+            vulkan-headers))
    (propagated-inputs (list
                        eudev
-                       hwdata
                        libdrm-2.4.114
                        libinput-minimal
                        libseat
@@ -205,7 +207,6 @@ limited size and a few external dependencies.  It is configurable via
                        nordic-wayland
                        nordic-wayland-protocols
                        pixman
-                       vulkan-headers
                        xcb-util-errors
                        xcb-util-wm
                        xorg-server-xwayland))))
