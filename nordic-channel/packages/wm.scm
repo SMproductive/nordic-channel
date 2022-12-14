@@ -202,13 +202,15 @@ limited size and a few external dependencies.  It is configurable via
    ;;          hwdata
    ;;          vulkan-headers))
     (native-inputs
-     (list pkg-config
-           hwdata
-           vulkan-headers))
+     (list hwdata
+           pkg-config))
    (propagated-inputs (list
                        eudev
                        libdrm-2.4.114
                        libinput-minimal
+                       vulkan-headers
+                       vulkan-loader
+                       vulkan-tools
                        libseat
                        libxkbcommon
                        nordic-mesa
