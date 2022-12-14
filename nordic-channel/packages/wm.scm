@@ -216,8 +216,8 @@ limited size and a few external dependencies.  It is configurable via
      libinput-minimal
      libxkbcommon
      ;;vulkan-headers
-     vulkan-tools
-     ;; vulkan-loader
+     ;;vulkan-tools
+     vulkan-loader
      nordic-mesa
      pixman
      libseat
