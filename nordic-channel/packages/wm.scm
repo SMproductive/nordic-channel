@@ -191,6 +191,7 @@ limited size and a few external dependencies.  It is configurable via
 
 (define-public nordic-wlroots
   (package
+   (inherit wlroots)
    (name "nordic-wlroots")
    (version "0.16.0")
    (source (origin
@@ -198,26 +199,24 @@ limited size and a few external dependencies.  It is configurable via
             (uri (string-append "https://gitlab.freedesktop.org/wlroots/wlroots/-/releases/" version "/downloads/wlroots-" version ".tar.gz"))
             (sha256
              (base32 "1kw4qdr9af4g38klhzchgm58s2ih154q9041bgfdbicnpcqany44"))))
-   (build-system meson-build-system)
-   (arguments
-    `(#:phases
-      (modify-phases %standard-phases
-                     (add-before 'configure 'hardcode-paths
-                                 (lambda* (#:key inputs #:allow-other-keys)
-                                   (substitute* "xwayland/server.c"
-                                                (("Xwayland") (string-append (assoc-ref inputs
-                                                                                        "xorg-server-xwayland")
-                                                                             "/bin/Xwayland")))
-                                   #t)))))
+   ;; (build-system meson-build-system)
+   ;; (arguments
+   ;;  `(#:phases
+   ;;    (modify-phases %standard-phases
+   ;;                   (add-before 'configure 'hardcode-paths
+   ;;                               (lambda* (#:key inputs #:allow-other-keys)
+   ;;                                 (substitute* "xwayland/server.c"
+   ;;                                              (("Xwayland") (string-append (assoc-ref inputs
+   ;;                                                                                      "xorg-server-xwayland")
+   ;;                                                                           "/bin/Xwayland")))
+   ;;                                 #t)))))
    (propagated-inputs
     (list ;; As required by wlroots.pc.
      nordic-libdrm
      eudev
      libinput-minimal
      libxkbcommon
-     ;;vulkan-headers
-     ;;vulkan-tools
-     vulkan-loader
+     vulkan-loader ; TODO need newer version
      nordic-mesa
      pixman
      libseat
