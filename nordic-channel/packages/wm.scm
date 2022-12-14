@@ -191,7 +191,6 @@ limited size and a few external dependencies.  It is configurable via
 
 (define-public nordic-wlroots
   (package
-   (inherit wlroots)
    (name "nordic-wlroots")
    (version "0.16.0")
    (source (origin
@@ -217,8 +216,8 @@ limited size and a few external dependencies.  It is configurable via
      libinput-minimal
      libxkbcommon
      vulkan-headers
-     vulkan-tools
-     vulkan-loader
+     ;; vulkan-tools
+     ;; vulkan-loader
      nordic-mesa
      pixman
      libseat
