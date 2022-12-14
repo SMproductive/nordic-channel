@@ -225,10 +225,11 @@ limited size and a few external dependencies.  It is configurable via
      xcb-util-errors
      xcb-util-wm
      xorg-server-xwayland))
-   (inputs (list
-            hwdata))
+   ;; (inputs (list
+   ;;          hwdata))
    (native-inputs
-    (list pkg-config))
+    (list hwdata
+          pkg-config))
    (home-page "https://github.com/swaywm/wlroots")
    (synopsis "Pluggable, composable, unopinionated modules for building a
 Wayland compositor")
