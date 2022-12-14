@@ -133,6 +133,19 @@ limited size and a few external dependencies.  It is configurable via
             (sha256
              (base32 "0fwad6w5jm32c04wh4gca7d1ixdj4b9dnsiy1h6qd9nxs0w47wwy"))))))
 
+(define-public libdrm-2.4
+  (package
+   (inherit libdrm)
+   (name "libdrm")
+   (version "2.4.114")
+    (source (origin
+              (method url-fetch)
+              (uri (string-append
+                    "https://dri.freedesktop.org/libdrm/libdrm-"
+                    version ".tar.xz"))
+              (sha256
+               (base32
+                "150kdmgsqqqklz6h1593j867zq6jfirlv79ynaj5qgqlrbpcy9k3"))))))
 
 (define-public wlroots-0.16
   (package
@@ -143,16 +156,4 @@ limited size and a few external dependencies.  It is configurable via
             (method url-fetch)
             (uri (string-append "https://gitlab.freedesktop.org/wlroots/wlroots/-/releases/" version "/downloads/wlroots-" version ".tar.gz"))
             (sha256
-             (base32 "1kw4qdr9af4g38klhzchgm58s2ih154q9041bgfdbicnpcqany44"))))
-   (propagated-inputs (list
-                       eudev
-                       libinput-minimal
-                       libxkbcommon
-                       mesa
-                       pixman
-                       libseat
-                       wayland-1.21
-                       wayland-protocols
-                       xcb-util-errors
-                       xcb-util-wm
-                       xorg-server-xwayland))))
+             (base32 "1kw4qdr9af4g38klhzchgm58s2ih154q9041bgfdbicnpcqany44"))))))
