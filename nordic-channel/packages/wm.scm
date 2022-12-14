@@ -1,6 +1,5 @@
 (define-module (nordic-channel packages wm)
   #:use-module (gnu packages admin)
-  #:use-module (gnu packages video)
   #:use-module (gnu packages base)
   #:use-module (gnu packages freedesktop)
   #:use-module (gnu packages gl)
@@ -8,6 +7,8 @@
   #:use-module (gnu packages gtk)
   #:use-module (gnu packages linux)
   #:use-module (gnu packages pkg-config)
+  #:use-module (gnu packages python)
+  #:use-module (gnu packages video)
   #:use-module (gnu packages wm)
   #:use-module (gnu packages xdisorg)
   #:use-module (gnu packages xorg)
@@ -65,10 +66,10 @@
    (native-inputs
     (list pkg-config))
    (inputs
-    (list wlroots))
+    (list nordic-wlroots))
    (propagated-inputs
     (list xorg-server-xwayland
-          wayland))
+          nordic-wayland))
    (home-page "https://github.com/SMproductive/nordic-dwl")
    (synopsis "Dynamic window manager for Wayland with nordic theme")
    (description
@@ -120,7 +121,7 @@ limited size and a few external dependencies.  It is configurable via
    (license license:gpl3+)))
 
 
-(define-public wayland-1.21
+(define-public nordic-wayland
   (package
    (inherit wayland)
    (name "wayland")
@@ -137,7 +138,6 @@ limited size and a few external dependencies.  It is configurable via
 (define-public libdrm-2.4.114
   (package
    (inherit libdrm)
-   (name "libdrm")
    (version "2.4.114")
     (source (origin
               (method url-fetch)
@@ -162,10 +162,30 @@ limited size and a few external dependencies.  It is configurable via
             libxxf86vm
             xorgproto))))
 
-(define-public wlroots-0.16
+(define-public nordic-wayland-protocols
+  (package
+    (inherit wayland-protocols)
+    (version "1.31")
+    (source (origin
+              (method url-fetch)
+              (uri (string-append
+                    "https://gitlab.freedesktop.org/wayland/"
+                    "wayland-protocols/-/releases/" version "/downloads/wayland-protocols-" version ".tar.xz"))
+              (sha256
+               (base32
+                "0f72359fzvh6jzri4fd79m34rwm2r55p2ryq4306wrw7xliafzx0"))))
+    (inputs
+     (list nordic-wayland))
+    (native-inputs (cons* pkg-config python
+                          (if (%current-target-system)
+                              (list pkg-config-for-build
+                                    nordic-wayland) ; for wayland-scanner
+                              '())))))
+
+
+(define-public nordic-wlroots
   (package
    (inherit wlroots)
-   (name "wlroots")
    (version "0.16.0")
    (source (origin
             (method url-fetch)
@@ -180,8 +200,8 @@ limited size and a few external dependencies.  It is configurable via
                        libdrm-2.4.114
                        pixman
                        libseat
-                       wayland-1.21
-                       wayland-protocols
+                       nordic-wayland
+                       nordic-wayland-protocols
                        xcb-util-errors
                        xcb-util-wm
                        xorg-server-xwayland))))
