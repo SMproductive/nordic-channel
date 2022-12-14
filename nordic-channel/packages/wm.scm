@@ -2,6 +2,7 @@
   #:use-module (gnu packages admin)
   #:use-module (gnu packages base)
   #:use-module (gnu packages freedesktop)
+  #:use-module (gnu packages pciutils)
   #:use-module (gnu packages gl)
   #:use-module (gnu packages glib)
   #:use-module (gnu packages gtk)
@@ -195,15 +196,16 @@ limited size and a few external dependencies.  It is configurable via
              (base32 "1kw4qdr9af4g38klhzchgm58s2ih154q9041bgfdbicnpcqany44"))))
    (propagated-inputs (list
                        eudev
-                       vulkan-headers
+                       hwdata
+                       libdrm-2.4.114
                        libinput-minimal
+                       libseat
                        libxkbcommon
                        nordic-mesa
-                       libdrm-2.4.114
-                       pixman
-                       libseat
                        nordic-wayland
                        nordic-wayland-protocols
+                       pixman
+                       vulkan-headers
                        xcb-util-errors
                        xcb-util-wm
                        xorg-server-xwayland))))
