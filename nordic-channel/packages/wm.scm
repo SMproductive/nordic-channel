@@ -219,11 +219,11 @@ limited size and a few external dependencies.  It is configurable via
      vulkan-headers
      vulkan-tools
      vulkan-loader
-     mesa
+     nordic-mesa
      pixman
      libseat
-     wayland
-     wayland-protocols
+     nordic-wayland
+     nordic-wayland-protocols
      xcb-util-errors
      xcb-util-wm
      xorg-server-xwayland))
