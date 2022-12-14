@@ -194,7 +194,7 @@ limited size and a few external dependencies.  It is configurable via
   (package
    (inherit vulkan-loader)
    (name "nordic-vulkan-loader")
-       (version "1.2.182")
+       (version "1.2.183")
     (source
      (origin
        (method git-fetch)
@@ -204,7 +204,7 @@ limited size and a few external dependencies.  It is configurable via
        (file-name (git-file-name name version))
        (sha256
         (base32
-         "0gmr9q3a6s8xvaa74fs9zbi9c305i2b3rx768qvl79nhbdj8nc02"))))))
+         "0gglyfyl61r4bfr81qij532vmwchcf23xa62blbl0jwd22dhbgf2"))))))
 
 
 (define-public nordic-wlroots
