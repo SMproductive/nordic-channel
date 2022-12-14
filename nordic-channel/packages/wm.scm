@@ -148,23 +148,9 @@ limited size and a few external dependencies.  It is configurable via
                (base32
                 "09nhk3jx3qzggl5vyii3yh4zm0npjqsbxhzvxrg2xla77a2cyj9h"))))))
 
-(define-public mesa-22.3.0
+(define-public nordic-mesa
   (package
    (inherit mesa)
-    (name "mesa")
-    (version "22.3.0")
-    (source
-      (origin
-        (method url-fetch)
-        (uri (list (string-append "https://mesa.freedesktop.org/archive/"
-                                  "mesa-" version ".tar.xz")
-                   (string-append "ftp://ftp.freedesktop.org/pub/mesa/"
-                                  "mesa-" version ".tar.xz")
-                   (string-append "ftp://ftp.freedesktop.org/pub/mesa/"
-                                  version "/mesa-" version ".tar.xz")))
-        (sha256
-         (base32
-          "0ihp63756kmp9rd0w83li1lf98saigail4b2hywc4j25b0vgjjv4"))))
     (propagated-inputs
       (list ;; The following are in the Requires.private field of gl.pc.
             libdrm-2.4.114
@@ -190,7 +176,7 @@ limited size and a few external dependencies.  It is configurable via
                        eudev
                        libinput-minimal
                        libxkbcommon
-                       mesa-22.3.0
+                       nordic-mesa
                        libdrm-2.4.114
                        pixman
                        libseat
