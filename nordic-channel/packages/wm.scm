@@ -134,7 +134,7 @@ limited size and a few external dependencies.  It is configurable via
             (sha256
              (base32 "0fwad6w5jm32c04wh4gca7d1ixdj4b9dnsiy1h6qd9nxs0w47wwy"))))))
 
-(define-public libdrm-2.4
+(define-public libdrm-2.4.114
   (package
    (inherit libdrm)
    (name "libdrm")
@@ -167,7 +167,7 @@ limited size and a few external dependencies.  It is configurable via
           "0ihp63756kmp9rd0w83li1lf98saigail4b2hywc4j25b0vgjjv4"))))
     (propagated-inputs
       (list ;; The following are in the Requires.private field of gl.pc.
-            libdrm-2.4
+            libdrm-2.4.114
             libvdpau
             libx11
             libxdamage
@@ -191,7 +191,7 @@ limited size and a few external dependencies.  It is configurable via
                        libinput-minimal
                        libxkbcommon
                        mesa
-                       libdrm-2.4
+                       libdrm-2.4.114
                        pixman
                        libseat
                        wayland-1.21
