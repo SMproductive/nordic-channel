@@ -1,5 +1,6 @@
 (define-module (nordic-channel packages wm)
   #:use-module (gnu packages admin)
+  #:use-module (gnu packages video)
   #:use-module (gnu packages base)
   #:use-module (gnu packages freedesktop)
   #:use-module (gnu packages gl)
@@ -146,6 +147,34 @@ limited size and a few external dependencies.  It is configurable via
               (sha256
                (base32
                 "09nhk3jx3qzggl5vyii3yh4zm0npjqsbxhzvxrg2xla77a2cyj9h"))))))
+
+(define-public mesa-22.3.0
+  (package
+   (inherit mesa)
+    (name "mesa")
+    (version "22.3.0")
+    (source
+      (origin
+        (method url-fetch)
+        (uri (list (string-append "https://mesa.freedesktop.org/archive/"
+                                  "mesa-" version ".tar.xz")
+                   (string-append "ftp://ftp.freedesktop.org/pub/mesa/"
+                                  "mesa-" version ".tar.xz")
+                   (string-append "ftp://ftp.freedesktop.org/pub/mesa/"
+                                  version "/mesa-" version ".tar.xz")))
+        (sha256
+         (base32
+          "0ihp63756kmp9rd0w83li1lf98saigail4b2hywc4j25b0vgjjv4"))))
+    (propagated-inputs
+      (list ;; The following are in the Requires.private field of gl.pc.
+            libdrm-2.4
+            libvdpau
+            libx11
+            libxdamage
+            libxfixes
+            libxshmfence
+            libxxf86vm
+            xorgproto))))
 
 (define-public wlroots-0.16
   (package
