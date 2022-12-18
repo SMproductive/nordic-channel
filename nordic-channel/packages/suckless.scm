@@ -1,4 +1,5 @@
 (define-module (nordic-channel packages suckless)
+  #:use-module (gnu packages fonts)
   #:use-module (gnu packages linux)
   #:use-module (gnu packages suckless)
   #:use-module (guix git-download)
