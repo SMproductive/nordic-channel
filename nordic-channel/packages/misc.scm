@@ -14,7 +14,7 @@
    (source (origin
 	    (method git-fetch)
 	    (uri (git-reference
-		  (url "https://github.com/SMproductive/pmanager-go")
+		  (url "https://gitlab.com/SMproductive/pmanager-go")
 		  (commit "fa286aeaadc7f6c6832c28f2c161b897e910bee7")))
 	    (file-name (git-file-name name version))
 	    (sha256
@@ -25,8 +25,8 @@
     (list libx11 libxcursor libxrandr libxinerama
 	  libxi pkg-config glfw))
    (arguments
-    `(#:import-path "github.com/SMproductive/pmanager-go"))
-   (home-page "https://github.com/SMproductive/pmanager-go")
+    `(#:import-path "gitlab.com/SMproductive/pmanager-go"))
+   (home-page "https://gitlab.com/SMproductive/pmanager-go")
    (synopsis "Nordic password manager using fyne2 api")
    (description "pmanager-go is simple and straight forward. Only what you press will happen!")
    (license license:gpl3+)))
@@ -38,7 +38,7 @@
    (source (origin
 	    (method git-fetch)
 	    (uri (git-reference
-		  (url "https://github.com/SMproductive/ppm")
+		  (url "https://gitlab.com/SMproductive/ppm")
 		  (commit "0996cec38a9677e9468d21a140c9ff3b389c7bd1")))
 	    (file-name (git-file-name name version))
 	    (sha256
@@ -48,8 +48,8 @@
    (native-inputs
     (list))
    (arguments
-    `(#:import-path "github.com/SMproductive/ppm"))
-   (home-page "https://github.com/SMproductive/ppm")
+    `(#:import-path "gitlab.com/SMproductive/ppm"))
+   (home-page "https://gitlab.com/SMproductive/ppm")
    (synopsis "Piping Password Manager")
    (description "ppm is comand line interface for managing passwords. It can open a pipe and what ever client you have can communicate to it.")
    (license license:gpl3+)))
