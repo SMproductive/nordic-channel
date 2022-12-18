@@ -36,6 +36,7 @@
           (commit "73f95e3dece7d206f4c2d4280138554f2766df19")))
         (sha256
           (base32 "0xksbl4hydnin13qw107x6gwwnl1iq2p4dkbqf1zlywj9v5g18w9"))))
+	(propagated-inputs (list nordic-scroll))
     (synopsis "Nordic themed st")))
 
 (define-public nordic-slstatus
