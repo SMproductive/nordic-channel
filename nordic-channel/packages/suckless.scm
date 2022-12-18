@@ -65,3 +65,21 @@
           (base32 "15yh0pfllnpalf4v3crlqns33jh3fqa938pci7bwvdqhhnnilj9x"))))
     (home-page "https://github.com/SMproductive/nordic-scroll")
     (synopsis "Usable scroll")))
+
+
+
+
+(define-public nordic-slock
+  (package
+    (inherit slscroll)
+    (name "nordic-slock")
+    (source
+      (origin
+        (method git-fetch)
+        (uri (git-reference
+          (url "https://github.com/SMproductive/nordic-slock")
+          (commit "97f7b44381a9425b7bc7465a6b5369d098c96752")))
+        (sha256
+          (base32 "1jgbwbhjp0fs42yhlpihcj0kgc5pn8p68k59iqnxaf1ysj3n9mr3"))))
+    (home-page "https://github.com/SMproductive/nordic-slock")
+    (synopsis "Nordic themed slock")))
