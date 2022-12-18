@@ -20,7 +20,10 @@
           (base32 "0cxag50ysmlhk5g6fzq016fdsmjjgh9fvwvscpin934sx48chwhh"))))
     (propagated-inputs (list
                         alsa-utils
-                        brightnessctl))
+                        brightnessctl
+                        font-gnu-freefont
+                        font-jetbrains-mono
+                        font-awesome))
     (synopsis "Nordic themed dwm")))
 
 (define-public nordic-st
