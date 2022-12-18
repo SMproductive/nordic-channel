@@ -66,12 +66,9 @@
     (home-page "https://github.com/SMproductive/nordic-scroll")
     (synopsis "Usable scroll")))
 
-
-
-
 (define-public nordic-slock
   (package
-    (inherit slscroll)
+    (inherit slock)
     (name "nordic-slock")
     (source
       (origin
