@@ -66,9 +66,9 @@
         (method git-fetch)
         (uri (git-reference
           (url "https://gitlab.com/SMproductive/nordic-scroll")
-          (commit "d61683df19ee4e23cb225349b9bad77dcc81f6e4")))
+          (commit "c8b8039ffb9d915a1104498e75a1b7d61dfdd220")))
         (sha256
-          (base32 "15yh0pfllnpalf4v3crlqns33jh3fqa938pci7bwvdqhhnnilj9x"))))
+          (base32 "1wicgl892s7m7gl59l2w0w9k8sibq18r8avrl9x1vs5n5bf5vdfw"))))
     (synopsis "Usable scroll")))
 
 (define-public nordic-slock
