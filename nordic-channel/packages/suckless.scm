@@ -68,7 +68,7 @@
           (url "https://gitlab.com/SMproductive/nordic-scroll")
           (commit "c8b8039ffb9d915a1104498e75a1b7d61dfdd220")))
         (sha256
-          (base32 "1wicgl892s7m7gl59l2w0w9k8sibq18r8avrl9x1vs5n5bf5vdfw"))))
+          (base32 "1pm5nzbd31vspzi4rqdrbx7145g7p3i108v63601q7nqbcqxkngk"))))
     (synopsis "Usable scroll")))
 
 (define-public nordic-slock
