@@ -85,19 +85,3 @@
           (base32 "1jgbwbhjp0fs42yhlpihcj0kgc5pn8p68k59iqnxaf1ysj3n9mr3"))))
     (synopsis "Nordic themed slock")))
 
-
-(define-public luke-st
-  (package
-    (inherit st)
-    (name "luke-st")
-    (version "0.8.4")
-    (source
-      (origin
-        (method git-fetch)
-        (uri (git-reference
-          (url "https://github.com/LukeSmithxyz/st.git")
-          (commit "36d225d71d448bfe307075580f0d8ef81eeb5a87")))
-        (sha256
-          (base32 "08364arwp4al0x91fs91gnmk2mpdw2n9aa1x9gw78bwvmbykrhdv"))))
-	(propagated-inputs (list nordic-scroll))
-    (synopsis "Nordic themed st")))
