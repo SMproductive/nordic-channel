@@ -16,9 +16,9 @@
         (method git-fetch)
         (uri (git-reference
           (url "https://gitlab.com/SMproductive/nordic-dwm")
-          (commit "10bbcb14f356441d9601f6d8e4ab68578d0aa316")))
+          (commit "f3923c8014077bfe968f8783fbb6c47516cfa4b2")))
         (sha256
-          (base32 "0cxag50ysmlhk5g6fzq016fdsmjjgh9fvwvscpin934sx48chwhh"))))
+          (base32 "0x4xl392fp8y9j1vwg9gjlgmmmq47gz822b1qw4xczzjjgrqs6yd"))))
     (propagated-inputs (list
                         alsa-utils
                         brightnessctl
