@@ -81,7 +81,6 @@
    (native-inputs
     (list pkg-config))
    (propagated-inputs (list
-                       pipewire
                        bemenu
                        brightnessctl
                        font-gnu-freefont
