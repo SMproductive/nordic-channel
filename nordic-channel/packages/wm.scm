@@ -19,7 +19,7 @@
            (url "https://gitlab.com/SMproductive/nordic-dwl")
            (commit "d92d29f64a6db5482ccead3fca541b795660fd7c")))
      (sha256
-      (base32 "1ddr1nc6msyc81yrif7i3r2gswp3cycf6zalb7lpf79vk4b2lnz9"))))
+      (base32 "1k8r4y0vyg7vvk1slv73ip8zvk7kyiszm956kbjxfkp2ya5k6909"))))
    (propagated-inputs (list
                        pipewire
                        bemenu
